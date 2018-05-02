@@ -4,3 +4,5 @@ node_modules/
 ## Compiled Files ##
 client/bundle.js
 .DS_Store
+
+database/seed-data.json
