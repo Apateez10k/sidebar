@@ -10,7 +10,7 @@ mongoose.connection.on('connected', function() {
   
 mongoose.connection.on('error',function (err) {
   console.log('Mongoose default connection error: ' + err);
-mongoose.connect(mongoUrlDocker)
+  mongoose.connect(mongoUrlDocker)
 });
 
 const db = mongoose.connection;

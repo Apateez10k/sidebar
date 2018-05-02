@@ -8,7 +8,7 @@
     "build": "webpack -d --watch",
     "build:prod": "webpack -p",
     "start": "node ./server/server.js",
-    "seed": "node ./database/seeder.js",
+    "seed": "mongoimport -d sidebar -c places --jsonArray --file ./database/seed-data.json",
     "docker": "npm run build:prod && npm run seed & npm run start"
   },
   "keywords": [],
