@@ -41,10 +41,11 @@ var generateData = function(numItems, idStart) {
 			writableStream.write(JSON.stringify(output) + ', \n');				
 		}
 	}
-	// writableStream.end(']');
 }
 
 generateData(5100000, 5000001);
+
+//Below is the expected layout of the data
 
 // var test = { id: 'ChIJFUBxSY6AhYARwOaLV7TsLjw',
 //   name: 'Clift San Francisco',
