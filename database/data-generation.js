@@ -3,10 +3,12 @@ const fs = require('file-system');
 
 let output = {};
 
-const writableStream = fs.createWriteStream('seed-data.json', { flags: 'a' });
 
 
-const generateData = function (numItems, idStart) {
+const generateData = function (numItems, idStart, file) {
+  
+const writableStream = fs.createWriteStream(file, { flags: 'a' });
+
   for (let i = 0; i < numItems; i++) {
     output = {};
 
@@ -36,7 +38,7 @@ const generateData = function (numItems, idStart) {
   }
 };
 
-generateData(5100000, 5000001);
+generateData(5100000, 5000001, 'seed-data.json');
 
 // Below is the expected layout of the data
 
