@@ -6,3 +6,4 @@ client/bundle.js
 .DS_Store
 
 database/seed-data.json
+database/seed-data.csv
