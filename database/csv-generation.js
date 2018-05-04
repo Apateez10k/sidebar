@@ -1,9 +1,10 @@
 const faker = require('faker');
 const fs = require('file-system');
 
-const writableStream = fs.createWriteStream('seed-data.csv', { flags: 'a' });
 
-const generateData = function (numItems, idStart) {
+const generateData = function (numItems, idStart, path) {
+  const writableStream = fs.createWriteStream(path, { flags: 'a' });
+
   for (let i = 0; i < numItems; i++) {
     if (i % 250000 === 0) {
       console.log(i);
@@ -20,7 +21,12 @@ const generateData = function (numItems, idStart) {
     const coords = '{' + (faker.random.number(180) - 90).toString() + ', ' + (faker.random.number(360) - 180).toString() + '}';
 
     writableStream.write(`${id.toString()}|${menu_url}|${address}|${location}|${url}|${phone}|${hours}|${coords}\n`);
+    if (i === numItems - 1) {
+      return('Finished Writing Data');
+    }
   }
 };
 
-generateData(5000000, 5000001);
+// generateData(5000000, 5000001, 'seed-data.csv');
+
+exports.generateData = generateData;

@@ -10,6 +10,7 @@ const generateData = function (numItems, idStart, file) {
 const writableStream = fs.createWriteStream(file, { flags: 'a' });
 
   for (let i = 0; i < numItems; i++) {
+
     output = {};
 
     if (i % 250000 === 0) {
@@ -35,10 +36,16 @@ const writableStream = fs.createWriteStream(file, { flags: 'a' });
     } else {
       writableStream.write(`${JSON.stringify(output)}, \n`);
     }
+
+    if (i === numItems - 1) {
+      return('Finished Writing Data');
+    }
   }
 };
 
-generateData(5100000, 5000001, 'seed-data.json');
+exports.generateData = generateData;
+
+// generateData(5100000, 5000001, 'seed-data.json');
 
 // Below is the expected layout of the data
 
