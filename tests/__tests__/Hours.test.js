@@ -9,7 +9,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 
 
-describe('Hours', () => {
+xdescribe('Hours', () => {
   
 
   it('should be defined', () => {
