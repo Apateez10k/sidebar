@@ -45,6 +45,7 @@ const generateData = function (numItems, idStart, file) {
   }
 };
 
+exports.generateItem = generateItem;
 exports.generateData = generateData;
 
 // Commented out for testing

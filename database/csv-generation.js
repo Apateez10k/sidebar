@@ -33,4 +33,5 @@ const generateData = function (numItems, idStart, path) {
 
 // generateData(5000000, 5000001, 'seed-data.csv');
 
+exports.generateItem = generateItem;
 exports.generateData = generateData;
