@@ -7,7 +7,7 @@ import Menu from '../../client/src/components/Menu';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('Menu', () => {
+xdescribe('Menu', () => {
   it('should be defined', () => {
     let menu_url = 'google.com';
 

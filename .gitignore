@@ -3,4 +3,7 @@ node_modules/
 
 ## Compiled Files ##
 client/bundle.js
-ZagatData60.json
+.DS_Store
+
+database/seed-data.json
+database/seed-data.csv

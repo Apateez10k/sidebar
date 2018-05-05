@@ -9,7 +9,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 
 
-describe('Contact', () => {
+xdescribe('Contact', () => {
   
 
   it('should be defined', () => {

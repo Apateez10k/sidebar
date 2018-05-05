@@ -7,7 +7,7 @@ import Booking from '../../client/src/components/Booking';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('Booking', () => {
+xdescribe('Booking', () => {
   it('should be defined', () => {
     expect(Booking).toBeDefined();
   });

@@ -6,22 +6,13 @@ const Places = require('./index.js');
 const Promise = require('bluebird');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://database/apateez-sidebar');
+// mongoose.connect('mongodb://database/apateez-sidebar');
 
 
 getFullData = (places) => {
   let counter = 0;
-  // Promise.map(places, function(place) {
-  //     var options = {
-  //         uri: `https://maps.googleapis.com/maps/api/place/details/json?placeid=${place.result.place_id}&key=AIzaSyDkBAx39pJ0ccyXA-TWN-FmevHc87mznAM`,
-  //         headers: {
-  //             'User-Agent': 'Request-Promise'
-  //       },
-  //       json: true
-  //   }
-    // return rp(options)
-    //   .then((data) => {
-      console.log('GET FULL DATA CALLED')
+
+  console.log('GET FULL DATA CALLED')
   let seedData = () => {
     let temp = {
       id: places[counter].result.place_id,
@@ -39,29 +30,24 @@ getFullData = (places) => {
     };
     console.log(temp)
 
-    Places.create(temp, (err, data) => {
-      if (err) {
-        console.log(err);
-      } else {
-        counter++;
-        if (counter < places.length) {
-          seedData();
-        } else {
-          return;
-        }
-      }
-    });
+    // Places.create(temp, (err, data) => {
+    //   if (err) {
+    //     console.log(err);
+    //   } else {
+    //     counter++;
+    //     if (counter < places.length) {
+    //       seedData();
+    //     } else {
+    //       return;
+    //     }
+    //   }
+    // });
 
 
   };
 
   seedData();
 
-     // })
-        // .catch(err => console.log(err));
-
-    // .then(() => mongoose.connection.close())
-    // .catch(err => console.log(err));
 };
 
 getFullData(initData);

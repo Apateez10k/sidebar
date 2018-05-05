@@ -4,11 +4,12 @@
   "description": "Displays descriptive info about restaurant",
   "main": "bundle.js",
   "scripts": {
-    "test": "jest --watch --coverage",
+    "test": "jest --coverage",
     "build": "webpack -d --watch",
     "build:prod": "webpack -p",
     "start": "node ./server/server.js",
-    "seed": "node ./database/seeder.js",
+    "mongoSeed": "mongoimport -d sidebar -c places --jsonArray --file ./database/seed-data.json",
+    "postgresSeed": "COPY places FROM '/Users/noahkirschbaum/Documents/System Design Capstone/sidebar/database/seed-data.csv' WITH (DELIMITER '|', FORMAT csv, HEADER false)",
     "docker": "npm run build:prod && npm run seed & npm run start"
   },
   "keywords": [],
@@ -25,6 +26,8 @@
     "body-parser": "^1.18.2",
     "eslint": "^4.19.1",
     "express": "^4.16.2",
+    "faker": "^4.1.0",
+    "file-system": "^2.2.2",
     "moment": "^2.22.1",
     "mongoose": "^5.0.14",
     "morgan": "^1.9.0",
