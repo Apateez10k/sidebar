@@ -2,24 +2,13 @@ CREATE DATABASE sidebar;
 
 USE photos;
 
-CREATE TABLE `sidebar`.`places` (
+CREATE TABLE places (
 	id INT,
-	name TEXT,
 	menu_url TEXT,
 	address TEXT,
 	location TEXT,
 	url TEXT,
 	phone TEXT,
-	hours JSON,
-	coords JSON,
+	hours TEXT ARRAY,
+	coords TEXT ARRAY
 )
-
-
-
-// id
-// name
-// menu_url
-// addresslocation
-// urlphone
-// hours
-// coords lat lng
