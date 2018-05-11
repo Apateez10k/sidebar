@@ -27,7 +27,8 @@ export default class Sidebar extends React.Component {
   getPlace() {
     let context = this;
     let id = window.location.href.split('/')[4];
-    axios.get(`${BASE_URL}/api/restaurants/${id}`)
+    // axios.get(`${BASE_URL}/api/restaurants/${id}`)
+    axios.get(`http://localhost:1337/api/restaurants/${id}`)
     .then((res) => {
       this.setState({
         place: res.data,
@@ -43,6 +44,7 @@ export default class Sidebar extends React.Component {
       return <div>Loading...</div>
     }
     if (this.state.isLoaded) {
+      console.log(this.state.place);
       return (
         
           <div className="sidebar">
@@ -56,6 +58,8 @@ export default class Sidebar extends React.Component {
                 address={address} 
                 phone={phone}
                 website={url}
+                // lat={coords[0]}
+                // lng={coords[1]}
                 lat={coords.lat}
                 lng={coords.lng}
                 id={id}

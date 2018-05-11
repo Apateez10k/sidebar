@@ -10,8 +10,8 @@ export default class Contact extends React.Component {
 
     let tel = `tel:${this.props.phone}`;
     let store = this.props.name.split(' ').join('+');
-    let navLink = `https://www.google.com/maps/dir/?api=1&destination=${store}&destination_place_id=${this.props.id}`;
-    let modalLink= `https://www.google.com/maps/embed/v1/place?key=AIzaSyDfVc7Wl0xQOdHnSm30Yk2lZtcBTPEZtjM&q=place_id:${this.props.id}`;
+    let navLink = `https://www.google.com/maps/dir/?api=1&destination=${store}&destination_place_id=ChIJFUBxSY6AhYARwOaLV7TsLjw`;
+    let modalLink= `https://www.google.com/maps/embed/v1/place?key=AIzaSyDfVc7Wl0xQOdHnSm30Yk2lZtcBTPEZtjM&q=place_id:ChIJFUBxSY6AhYARwOaLV7TsLjw`;
     
     return (
       <div className="contact" style={{content: {left: "0px", "margin-left": "0px"}}}>
