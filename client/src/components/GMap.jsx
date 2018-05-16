@@ -19,4 +19,4 @@ const GMap = (props) => {
 }
 
 export default GMap;
-window.GMap = GMap;
+// window.GMap = GMap;
