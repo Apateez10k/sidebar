@@ -7,7 +7,7 @@ import Sidebar from '../../client/src/components/Sidebar';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('Sidebar', () => {
+xdescribe('Sidebar', () => {
   it('should be defined', () => {
     expect(Sidebar).toBeDefined();
   });

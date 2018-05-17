@@ -4,7 +4,7 @@
   "description": "Displays descriptive info about restaurant",
   "main": "bundle.js",
   "scripts": {
-    "test": "jest --watch --coverage",
+    "test": "jest --coverage",
     "build": "webpack -d --watch",
     "build:prod": "webpack -p",
     "start": "node ./server/server.js",

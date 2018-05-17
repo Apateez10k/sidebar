@@ -7,7 +7,7 @@ import GMap from '../../client/src/components/GMap';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('GMap', () => {
+xdescribe('GMap', () => {
   it('should be defined', () => {
     let location = 'SF';
     let id = '1234';

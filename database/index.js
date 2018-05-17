@@ -10,7 +10,9 @@ mongoose.connection.on('connected', function() {
   
 mongoose.connection.on('error',function (err) {
   console.log('Mongoose default connection error: ' + err);
+
   mongoose.connect(mongoUrl)
+
 });
 
 const placesSchema = mongoose.Schema({
