@@ -7,8 +7,11 @@ const generateItem = function (idStart, i) {
   output = {};
 
   output.id = idStart + i;
+
+  output.name = faker.company.companyName();
   output.menu_url = 'http://google.com';
-  output.address = faker.fake('{{address.streetAddress}} {{address.streetName}}, San Francisco, CA 94016, USA');
+  output.address = faker.fake('{{address.streetAddress}} {{address.streetName}}, San F3rancisco, CA 94016, USA');
+
   output.location = 'https://maps.gdoogle.com/?cid=4336663750511421120';
   output.url = faker.internet.url();
   output.phone = faker.fake('+1 {{random.number(9)}}{{random.number(9)}}{{random.number(9)}}-{{random.number(9)}}{{random.number(9)}}{{random.number(9)}}-{{random.number(9)}}{{random.number(9)}}{{random.number(9)}}{{random.number(9)}}');

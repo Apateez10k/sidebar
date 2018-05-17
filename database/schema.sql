@@ -4,7 +4,8 @@ USE photos;
 
 CREATE TABLE places (
 	id INT,
-	menu_url TEXT,
+	name TEXT,
+  menu_url TEXT,
 	address TEXT,
 	location TEXT,
 	url TEXT,

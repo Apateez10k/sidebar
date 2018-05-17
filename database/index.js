@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const mongoUrlDocker = 'mongodb://database/apateez-sidebar';
-const mongoUrl = 'mongodb://localhost/apateez-sidebar';
+const mongoUrlDocker = 'mongodb://database/sidebar';
+const mongoUrl = 'mongodb://localhost/sidebar';
 
 mongoose.connect(mongoUrl);
 
@@ -10,36 +10,33 @@ mongoose.connection.on('connected', function() {
   
 mongoose.connection.on('error',function (err) {
   console.log('Mongoose default connection error: ' + err);
-  mongoose.connect(mongoUrlDocker)
+
+  mongoose.connect(mongoUrl)
+
 });
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {} ); // connected
-
 const placesSchema = mongoose.Schema({
-  id: {
-      type: String,
-      unique: true
-    },
-    name: String,
-    menu_url: String,
-    address: String,
-    location: String,
-    url: String,
-    phone: String,
-    hours: [],
-    coords: {
-      lat: String,
-      lng: String
-    }
+  id: Number,
+  name: String,
+  menu_url: String,
+  address: String,
+  location: String,
+  url: String,
+  phone: String,
+  hours: [],
+  coords: {
+    lat: Number,
+    lng: Number
+  }
   });
 
-const Places = mongoose.model('Places', placesSchema);
+const Places = mongoose.model('places', placesSchema);
 
 const clearDb = (cb) => {
   Places.remove({}, cb)
 }
 
+const db = mongoose.connect(mongoUrl);
+
+module.exports = db;
 module.exports = Places;
-exports.clearDb = clearDb;
