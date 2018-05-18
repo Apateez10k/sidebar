@@ -1,3 +1,6 @@
+var redisClient = require('redis').createClient;
+var redis = redisClient(6379, 'localhost');
+
 const mongoose = require('mongoose');
 const mongoUrlDocker = 'mongodb://database/sidebar';
 const mongoUrl = 'mongodb://localhost/sidebar';
